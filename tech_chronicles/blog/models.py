@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+""" Django Models """
 from django.db import models
 from django.utils import timezone
 from django.conf import settings
@@ -5,7 +7,7 @@ from django.urls import reverse
 
 
 class PublishedManager(models.Manager):
-    """ Customer manager class for published posts """
+    """ Custom manager class for published posts """
     def get_queryset(self):
         return (
             super().get_queryset().filter(status=Post.Status.PUBLISHED)
